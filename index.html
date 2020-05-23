@@ -26,18 +26,13 @@
 </body>
 </html>
 <script>
-  // window.addEventListener('click', (ev) => {
-  //   const id = ev.target.id;
-  //   if (id === 'canvas') return;
-
-  //   const canvas = document.getElementById('canvas');
-  //   console.log(canvas.style, 'xxxxx');
-  // })
   const us = new URLSearchParams(location.search);
   window.$from = decodeURIComponent(us.get('from') || '');
   window.$height = +us.get('height') || document.documentElement.clientHeight;
 
-  console.log($from, $height, 'xxxx')
+  document.body.addEventListener('touchmove', function(e){
+    e.preventDefault();
+  }, { passive: false });
 </script>
 <script>
   const iframe = document.getElementById('iframe');
