@@ -35,7 +35,7 @@
   const stopScroll = e => e.preventDefault();
   document.body.addEventListener('click', e => {
     clickCount++;
-    if (!timer) timer = setTimeout(() => { clickCount = 0; timer = null; }, 200);
+    if (!timer) timer = setTimeout(() => { clickCount = 0; timer = null; }, 300);
     if (clickCount < 2) return;
 
     document.body.removeEventListener('touchmove', stopScroll, { passive: false });
