@@ -30,7 +30,7 @@
   window.$height = +us.get('height') || document.documentElement.clientHeight;
 
   let clickCount = 0;
-  let canScroll = false;
+  let canScroll = true;
   let timer = null;
   const stopScroll = e => e.preventDefault();
   document.body.addEventListener('click', e => {
