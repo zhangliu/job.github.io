@@ -61,6 +61,8 @@ const ctx = canvas.getContext('2d');
 ctx.strokeStyle="#ff4d4f";
 
 canvas.ontouchstart = function(e) {
+  if(canScroll) return;
+
   const x = e.touches[0].clientX;
   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   const y = e.touches[0].clientY + scrollTop;
