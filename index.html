@@ -29,9 +29,19 @@
   window.$from = decodeURIComponent(us.get('from') || '');
   window.$height = +us.get('height') || document.documentElement.clientHeight;
 
-  document.body.addEventListener('touchmove', function (e) {
-    e.preventDefault();
-  }, { passive: false });
+  let clickCount = 0;
+  let canScroll = false;
+  let timer = null;
+  const stopScroll = e => e.preventDefault();
+  document.body.addEventListener('click', e => {
+    clickCount++;
+    if (!timer) timer = setTimeout(() => { clickCount = 0; timer = null; }, 200);
+    if (clickCount < 2) return;
+
+    document.body.removeEventListener('touchmove', stopScroll, { passive: false });
+    if (!canScroll) document.body.addEventListener('touchmove', stopScroll, { passive: false });
+    canScroll = !canScroll;
+  });
 </script>
 <script>
   const iframe = document.getElementById('iframe');
