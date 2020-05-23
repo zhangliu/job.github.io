@@ -38,9 +38,9 @@
     if (!timer) timer = setTimeout(() => { clickCount = 0; timer = null; }, 300);
     if (clickCount < 2) return;
 
+    canScroll = !canScroll;
     document.body.removeEventListener('touchmove', stopScroll, { passive: false });
     if (!canScroll) document.body.addEventListener('touchmove', stopScroll, { passive: false });
-    canScroll = !canScroll;
   });
 </script>
 <script>
