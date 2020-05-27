@@ -5,13 +5,10 @@ export default class ClassName extends React.Component {
   render() {
     return (
       <div>
-        <Page>
-          fdafajflajLjfdlksjalfdjal
-        </Page>
-
-        <Page>
-          fjdsljflsjflks丽枫酒店死啦就发领导设计费
-        </Page>
+        <Page>1</Page>
+        <Page>2</Page>
+        <Page>3</Page>
+        <Page>4</Page>
       </div>
     )
   }
