@@ -1,11 +1,11 @@
 import React from 'react';
 import { learnLine } from '../../utils/canvas';
-import { initTurnLeft, initTurnRight } from '../../utils/touch';
+import { initTurnLeft, initDblTap } from '../../utils/touch';
 
 export default class ClassName extends React.Component {
   componentDidMount() {
     this.initCanvas(this.canvas);
-    if (this.page) this.page.id = `page_${Math.random() * 100}`
+    if (this.page) this.page.id = `page_${Math.random()}`
   }
 
   initCanvas(canvas) {
@@ -16,13 +16,20 @@ export default class ClassName extends React.Component {
 
     learnLine(canvas);
 
-    initTurnRight(canvas, () => {
+    initDblTap(canvas, () => {
       const next = window.$(this.page).next()[0];
       if (!next) return;
 
       const nextId = next.id;
       window.location.href = `${window.location.origin}${window.location.pathname}#${nextId}`;
     });
+    // initTurnRight(canvas, () => {
+    //   const next = window.$(this.page).next()[0];
+    //   if (!next) return;
+
+    //   const nextId = next.id;
+    //   window.location.href = `${window.location.origin}${window.location.pathname}#${nextId}`;
+    // });
 
     initTurnLeft(canvas, () => window.history.go(-1));
   }
