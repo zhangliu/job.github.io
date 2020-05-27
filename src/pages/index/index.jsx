@@ -1,39 +1,18 @@
 import React from 'react';
+import Page from '../../components/page';
 
-function ClassName() {
-  return (
-    <div className="mt:200">
-      <div data-role="page" id="pageone">
-        <div data-role="header">
-          <h1>欢迎来到我的主页</h1>
-        </div>
+export default class ClassName extends React.Component {
+  render() {
+    return (
+      <div>
+        <Page>
+          fdafajflajLjfdlksjalfdjal
+        </Page>
 
-        <div data-role="main" class="ui-content">
-          <p>单击链接查看淡入效果。</p>
-          <a href="#pagetwo" data-transition="fade">淡入第二个页面</a>
-        </div>
-
-        <div data-role="footer">
-          <h1>底部文本</h1>
-        </div>
-      </div> 
-
-      <div data-role="page" id="pagetwo">
-        <div data-role="header">
-          <h1>欢迎来到我的主页</h1>
-        </div>
-
-        <div data-role="main" class="ui-content">
-          <p>点击链接返回上一个页面。<b>注意</b>: fade（淡入）效果是默认的</p>
-          <a href="#pageone">返回第一个页面</a>
-        </div>
-
-        <div data-role="footer">
-          <h1>底部文本</h1>
-        </div>
-      </div> 
-    </div>
-  )
+        <Page>
+          fjdsljflsjflks丽枫酒店死啦就发领导设计费
+        </Page>
+      </div>
+    )
+  }
 }
-
-export default ClassName;
