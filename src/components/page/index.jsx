@@ -21,7 +21,7 @@ export default class ClassName extends React.Component {
       if (!next) return;
 
       const nextId = next.id;
-      window.location.href = `${window.location.origin}#${nextId}`;
+      window.location.href = `${window.location.origin}${window.location.pathname}#${nextId}`;
     });
 
     initTurnLeft(canvas, () => window.history.go(-1));
