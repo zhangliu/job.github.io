@@ -46,7 +46,9 @@ export default class ClassName extends React.Component {
       >
         <canvas className="p:a zi:100" ref={node => this.canvas = node} />
         {this.renderHeader()}
-        <div className="p:a t:0 l:0 b:0 r:0 d:f fd:c ai:c jc:c p:20">{this.props.children}</div>
+        <div className="p:a t:0 l:0 b:0 r:0 d:f fd:c ai:c jc:c p:20">
+          <div className="mt:-120 d:f fd:c ai:c">{this.props.children}</div>
+        </div>
         {this.renderFooter()}
       </div>
     )
