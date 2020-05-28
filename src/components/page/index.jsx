@@ -5,7 +5,7 @@ import { initTurnLeft, initDblTap } from '../../utils/touch';
 export default class ClassName extends React.Component {
   componentDidMount() {
     this.initCanvas(this.canvas);
-    if (this.page) this.page.id = `page_${Math.random()}`
+    if (this.page) this.page.id = `page_${window.$id++}`
   }
 
   initCanvas(canvas) {
@@ -35,11 +35,28 @@ export default class ClassName extends React.Component {
   }
 
   render() {
+    const className = this.props.className || '';
     return (
-      <div data-role="page" id={this.props.id} ref={node => this.page = node}>
+      <div
+        data-role="page"
+        className={className}
+        id={this.props.id}
+        ref={node => this.page = node}
+        style={{ backgroundColor: '#fff' }}
+      >
         <canvas className="p:a zi:100" ref={node => this.canvas = node} />
-        {this.props.children}
+        {this.renderHeader()}
+        <div className="p:a t:0 l:0 b:0 r:0 d:f fd:c ai:c jc:c p:20">{this.props.children}</div>
+        {this.renderFooter()}
       </div>
     )
+  }
+
+  renderHeader() {
+    return <img className="h:25 m:10 ml:8" src="./logo.jpg" alt="" />;
+  }
+
+  renderFooter() {
+    return <img className="h:100 m:10 p:a b:0 r:0" src="./qrcode.png" alt="" />;
   }
 }
