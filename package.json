@@ -32,7 +32,7 @@
     ]
   },
   "devDependencies": {
-    "@byted/class-to-css-loader": "^2.0.19",
+    "@byted/class-to-css-loader": "^2.0.20",
     "customize-cra": "^0.9.1",
     "react-app-rewired": "^2.1.6"
   }
