@@ -4,8 +4,8 @@
 .w_s_100_percent_{width:100%}
 .d_s_f{display:flex}
 .jc_s_c{justify-content:center}
-.h_s_25{height:25px}
-.m_s_16{margin:16px}
+.h_s_32{height:32px}
+.m_s_8{margin:8px}
 .fs_s_32{font-size:32px}
 .fw_s_b{font-weight:bold}
 .mt_s_20{margin-top:20px}
@@ -15,3 +15,12 @@
 .p_s_20{padding:20px}
 .w_s_80_percent_{width:80%}
 .ta_s_c{text-align:center}
+.fs_s_16{font-size:16px}
+.c_s_fff{color:#fff}
+.w_s_120{width:120px}
+.p_s_16{padding:16px}
+.bgc_s_3370ff{background-color:#3370ff}
+.w_s_60{width:60px}
+.bgc_s_ff8b07{background-color:#ff8b07}
+.bgc_s_ee4d38{background-color:#ee4d38}
+.w_s_240{width:240px}
