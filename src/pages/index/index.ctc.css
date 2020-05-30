@@ -4,7 +4,7 @@
 .w_s_100_percent_{width:100%}
 .d_s_f{display:flex}
 .jc_s_c{justify-content:center}
-.h_s_32{height:32px}
+.h_s_30{height:30px}
 .m_s_8{margin:8px}
 .fs_s_32{font-size:32px}
 .fw_s_b{font-weight:bold}
@@ -18,9 +18,11 @@
 .fs_s_16{font-size:16px}
 .c_s_fff{color:#fff}
 .w_s_120{width:120px}
-.p_s_16{padding:16px}
+.p_s_18{padding:18px}
 .bgc_s_3370ff{background-color:#3370ff}
+.m_s_1{margin:1px}
 .w_s_60{width:60px}
 .bgc_s_ff8b07{background-color:#ff8b07}
+.ctc_mb_s_1_mt_s_1{margin-bottom:1px;margin-top:1px}
 .bgc_s_ee4d38{background-color:#ee4d38}
 .w_s_240{width:240px}
