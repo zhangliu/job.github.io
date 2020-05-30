@@ -59,6 +59,6 @@ export default class ClassName extends React.Component {
   }
 
   renderFooter() {
-    return <img className="h:80 m:10 p:a b:0 r:0" src="./me.jpeg" alt="" />;
+    return <img className="h:100 m:10 p:a b:0 r:0" src="./me.jpeg" alt="" />;
   }
 }
