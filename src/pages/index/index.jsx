@@ -32,7 +32,7 @@ export default class ClassName extends React.Component {
             <div>* 有产品设计 & 界面设计经验优先</div>
             <div className="mt:20">* 有自己的技术产品、开源作品优先</div>
             <div className="mt:20">* ?</div>
-            <img className="w:100% mt:20" alt="" src="http://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590839850268&di=ea6768dc4bd3abd94887f59e0a8aae61&imgtype=0&src=http%3A%2F%2Fpics1.baidu.com%2Ffeed%2F8d5494eef01f3a2968ca20934e3e06355c607c09.jpeg%3Ftoken%3D0e6dc97831d2aee6c27eca50c0ae32bb%26s%3D16E1BB0D40A182F01BB0AF970300D08D" />
+            <img className="h:179 mt:20" alt="" src="http://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590839850268&di=ea6768dc4bd3abd94887f59e0a8aae61&imgtype=0&src=http%3A%2F%2Fpics1.baidu.com%2Ffeed%2F8d5494eef01f3a2968ca20934e3e06355c607c09.jpeg%3Ftoken%3D0e6dc97831d2aee6c27eca50c0ae32bb%26s%3D16E1BB0D40A182F01BB0AF970300D08D" />
           </div>
         </Page>
       </div>
