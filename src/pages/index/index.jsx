@@ -1,5 +1,4 @@
 import React from 'react';
-import Tag from '../../components/tag';
 import Page from '../../components/page';
 
 export default class ClassName extends React.Component {

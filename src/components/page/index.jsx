@@ -1,11 +1,23 @@
 import React from 'react';
 import { learnLine } from '../../utils/canvas';
-import { initTurnLeft, initDblTap } from '../../utils/touch';
+import { initDblTap } from '../../utils/touch';
 
+const defaultPage = 'page_1';
 export default class ClassName extends React.Component {
   componentDidMount() {
+    this.initPage();
     this.initCanvas(this.canvas);
-    if (this.page) this.page.id = `page_${window.$id++}`
+  }
+
+  initPage() {
+    if (!this.page) return;
+
+    this.page.id = `page_${window.$id++}`;
+    this.page.style.width = document.documentElement.clientWidth + 'px';
+    this.page.style.height = document.documentElement.clientHeight + 'px';
+
+    const pageId = window.location.hash.replace(/#(.*?)$/, '$1') || defaultPage;
+    window.$(`#${pageId}`).show();
   }
 
   initCanvas(canvas) {
@@ -16,33 +28,27 @@ export default class ClassName extends React.Component {
 
     learnLine(canvas);
 
-    initDblTap(canvas, () => {
-      const next = window.$(this.page).next()[0];
-      if (!next) return;
+    initDblTap(canvas, (event) => {
+      const width = document.documentElement.clientWidth;
+      const clientX = event.touches[0].clientX;
 
-      const nextId = next.id;
-      window.location.href = `${window.location.origin}${window.location.pathname}#${nextId}`;
+      let next = (width / 2) < clientX
+        ? window.$(this.page).next()[0]
+        : window.$(this.page).prev()[0];
+      next = next || document.getElementById(defaultPage);
+
+      window.$(this.page).fadeOut(300, () => window.$(next).fadeIn());
     });
-    // initTurnRight(canvas, () => {
-    //   const next = window.$(this.page).next()[0];
-    //   if (!next) return;
-
-    //   const nextId = next.id;
-    //   window.location.href = `${window.location.origin}${window.location.pathname}#${nextId}`;
-    // });
-
-    initTurnLeft(canvas, () => window.history.go(-1));
   }
 
   render() {
     const className = this.props.className || '';
     return (
       <div
-        data-role="page"
-        className={className}
+        data-type="page"
+        className={`bgc:fff d:n ${className}`}
         id={this.props.id}
         ref={node => this.page = node}
-        style={{ backgroundColor: '#fff' }}
       >
         <canvas className="p:a zi:100" ref={node => this.canvas = node} />
         {this.renderHeader()}
