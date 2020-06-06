@@ -29,13 +29,14 @@ export default class ClassName extends React.Component {
     learnLine(canvas);
 
     initDblTap(canvas, (event) => {
-      const width = document.documentElement.clientWidth;
-      const clientX = event.touches[0].clientX;
+      // const width = document.documentElement.clientWidth;
+      // const clientX = event.touches[0].clientX;
 
-      let next = (width / 2) < clientX
-        ? window.$(this.page).next()[0]
-        : window.$(this.page).prev()[0];
-      next = next || document.getElementById(defaultPage);
+      // let next = (width / 2) < clientX
+      //   ? window.$(this.page).next()[0]
+      //   : window.$(this.page).prev()[0];
+      // next = next || document.getElementById(defaultPage);
+      const next = window.$(this.page).next()[0] || document.getElementById(defaultPage);
 
       window.$(this.page).fadeOut(300, () => window.$(next).fadeIn());
     });
