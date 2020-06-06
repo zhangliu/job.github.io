@@ -62,7 +62,11 @@ export default class ClassName extends React.Component {
   }
 
   renderHeader() {
-    return <img className="h:25 m:10 ml:8" src="./logo.jpg" alt="" />;
+    const onClick = () => {
+      const ctx = this.canvas.getContext('2d');
+      ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+    return <img className="h:25 m:10 ml:8 p:a zi:101" onClick={onClick} src="./logo.jpg" alt="" />;
   }
 
   renderFooter() {
