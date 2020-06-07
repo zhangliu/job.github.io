@@ -7,6 +7,10 @@ export default class ClassName extends React.Component {
   componentDidMount() {
     this.initPage();
     this.initCanvas(this.canvas);
+
+    // window.addEventListener("popstate", function(e) { 
+    //   alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能 
+    // }, false);
   }
 
   initPage() {
@@ -39,6 +43,7 @@ export default class ClassName extends React.Component {
       const next = window.$(this.page).next()[0] || document.getElementById(defaultPage);
 
       window.$(this.page).fadeOut(300, () => window.$(next).fadeIn());
+      window.location.hash = next.id;
     });
   }
 

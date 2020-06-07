@@ -1,9 +1,9 @@
 import React from 'react';
 
 const params  = new URLSearchParams(window.location.search);
-const pageName = params.get('page') || 'index';
+const pageIndex = params.get('page') || '1';
 
-const Page = React.lazy(() => import(`./pages/${pageName}`));
+const Page = React.lazy(() => import(`./pages/page${pageIndex}`));
 
 function App() {
   return (
