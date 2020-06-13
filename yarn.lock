@@ -1035,10 +1035,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@byted/class-to-css-loader@^2.0.24":
-  version "2.0.24"
-  resolved "http://bnpm.byted.org/@byted/class-to-css-loader/download/@byted/class-to-css-loader-2.0.24.tgz#14f9da1e733ee9ab11228295f2d5c10f4c6a0f85"
-  integrity sha1-FPnaHnM+6asRIoKV8tXBD0xqD4U=
+"@byted/class-to-css-loader@^2.0.26":
+  version "2.0.26"
+  resolved "http://bnpm.byted.org/@byted/class-to-css-loader/download/@byted/class-to-css-loader-2.0.26.tgz#9dd1f772e9fecafe1931aa181c7a2add89fd5950"
+  integrity sha1-ndH3cun+yv4ZMaoYHHoq3Yn9WVA=
   dependencies:
     "@babel/core" "^7.9.6"
     "@babel/parser" "^7.9.6"

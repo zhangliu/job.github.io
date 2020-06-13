@@ -4,6 +4,7 @@ import { learnLine } from '../../utils/canvas';
 import './index.scss';
 
 const defaultPage = 'page_1';
+
 export default class ClassName extends React.Component {
   componentDidMount() {
     this.initPage();
@@ -33,13 +34,11 @@ export default class ClassName extends React.Component {
 
   initCanvas(canvas) {
     if (!canvas) return;
-
     // const offset = window.$(this.page).position();
     // learnLine(canvas, { offset });
     window.$(canvas).dblclick(() => {
       const next = window.$(this.page).next()[0] || document.getElementById(defaultPage);
       window.$(this.page).fadeOut(300, () => window.$(next).fadeIn());
-      // window.location.hash = next.id;
     });
   }
 
@@ -47,14 +46,16 @@ export default class ClassName extends React.Component {
     const className = this.props.className || '';
     return (
       <div
-        className={`bgc:fff d:n p:r ${className} page`}
+        className={`bgc:fff d:n p:r page`}
         style={{userSelect: 'none'}}
         ref={node => this.page = node}
       >
         <canvas className="p:a t:0 l:0 w:100% h:100% zi:100" ref={node => this.canvas = node} />
-        {this.renderHeader()}
-          <div className="d:f fd:c ai:c m:20 ml:40 mr:40">{this.props.children}</div>
-        {this.renderFooter()}
+        <div className="d:f fd:c h:100%">
+          {this.renderHeader()}
+          <div className={`d:f fd:c ai:c ml:40 mr:40 h:100% ${className}`}>{this.props.children}</div>
+          {this.renderFooter()}
+        </div>
       </div>
     )
   }
@@ -65,7 +66,11 @@ export default class ClassName extends React.Component {
       const ctx = this.canvas.getContext('2d');
       ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
-    return <img className="h:20 m:10 ml:8" onClick={onClick} src="./logo.jpg" alt="" />;
+    return (
+      <div>
+        <img className="h:20 m:10 ml:8" onClick={onClick} src="./logo.jpg" alt="" />
+      </div>
+    );
   }
 
   renderFooter() {

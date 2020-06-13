@@ -5,12 +5,14 @@ export default class ClassName extends React.Component {
   render() {
     return (
       <div className="h:100% w:100% d:f jc:c ai:c">
+        <Page className="jc:c">
+            <img className="w:60%" src="./imgs/5.jpeg" alt="" />
+        </Page>
         <Page>
-          <img className="w:100% mt:80" src="./imgs/5.jpeg" alt="" />
-          <div className="ta:c mt:40">
-            <img className="w:45% t:r5 bw:4 bs:s bc:222" src="./imgs/2.jpeg" alt="" />
-            <img className="w:45% t:r350 bw:4 bs:s bc:aa0000" src="./imgs/3.jpeg" alt="" />
-            <img className="w:60% mt:-15 t:r30 bw:4 bs:s bc:00aa00" src="./imgs/4.jpeg" alt="" />
+          <div className="d:f ai:c jc:c">
+            <img className="w:45% bw:4 bs:s bc:222" src="./imgs/2.jpeg" alt="" />
+            <img className="w:45% bw:4 bs:s bc:aa0000" src="./imgs/3.jpeg" alt="" />
+            <img className="w:60% mt:-15 bw:4 bs:s bc:00aa00" src="./imgs/4.jpeg" alt="" />
           </div>
         </Page>
         <Page>
