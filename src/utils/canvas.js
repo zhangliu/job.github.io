@@ -7,7 +7,6 @@ export const learnLine = (canvas, config = {}) => {
   canvas.onmousedown = function(e) {
     ctx.beginPath();
     ctx.moveTo(e.pageX - offsetLeft, e.pageY - offsetTop);
-    console.log(e.pageX - offsetLeft, e.pageY - offsetTop)
   
     canvas.onmousemove = function(e){
       const targetX = e.pageX - offsetLeft;

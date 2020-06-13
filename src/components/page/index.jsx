@@ -13,9 +13,8 @@ export default class ClassName extends React.Component {
   initPage() {
     if (!this.page) return;
 
-    const { width, height } = this.getSize();
-    this.page.style.width = `${width}px`;
-    this.page.style.height = `${height}px`;
+    this.initPageSize();
+    window.addEventListener('resize', () => this.initPageSize());
 
     const params  = new URLSearchParams(window.location.search);
     const pageId = params.get('page') ? `page_${params.get('page')}` : defaultPage;
@@ -23,12 +22,13 @@ export default class ClassName extends React.Component {
     window.$(`#${pageId}`).show();
   }
 
-  getSize() {
+  initPageSize() {
     const height = window.$(this.page).parent().height();
     const ratio = this.props.mode === 'vertical' ? (9 / 16) : (16 / 9);
     const width = height * ratio;
 
-    return { width, height };
+    this.page.style.width = `${width}px`;
+    this.page.style.height = `${height}px`;
   }
 
   initCanvas(canvas) {
