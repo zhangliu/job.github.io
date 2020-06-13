@@ -72,7 +72,7 @@ export default class ClassName extends React.Component {
     }
     return (
       <div>
-        <img className="h:20 m:10 ml:8" onClick={onClick} src="./logo.jpg" alt="" />
+        <img className="h:25 m:10" onClick={onClick} src="./logo.jpg" alt="" />
       </div>
     );
   }
