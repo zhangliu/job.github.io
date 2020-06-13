@@ -53,7 +53,7 @@ export default class ClassName extends React.Component {
       >
         <canvas className="p:a t:0 l:0 w:100% h:100% zi:100" ref={node => this.canvas = node} />
         {this.renderHeader()}
-          <div className="d:f fd:c ai:c">{this.props.children}</div>
+          <div className="d:f fd:c ai:c m:20 ml:40 mr:40">{this.props.children}</div>
         {this.renderFooter()}
       </div>
     )
@@ -65,7 +65,7 @@ export default class ClassName extends React.Component {
       const ctx = this.canvas.getContext('2d');
       ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
-    return <img className="h:20 m:10 ml:8 mb:20" onClick={onClick} src="./logo.jpg" alt="" />;
+    return <img className="h:20 m:10 ml:8" onClick={onClick} src="./logo.jpg" alt="" />;
   }
 
   renderFooter() {
