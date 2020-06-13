@@ -1,25 +1,26 @@
 export const learnLine = (canvas, config = {}) => {
   const ctx = canvas.getContext('2d');
   ctx.strokeStyle = config.strokeStyle || '#ff4d4f';
+  const offsetLeft = config.offset.left;
+  const offsetTop = config.offset.top;
 
-  canvas.ontouchstart = function(e) {
-    const x = e.touches[0].clientX;
-    const y = e.touches[0].clientY;
+  canvas.onmousedown = function(e) {
     ctx.beginPath();
-    ctx.moveTo(x,y);
+    ctx.moveTo(e.pageX - offsetLeft, e.pageY - offsetTop);
+    console.log(e.pageX - offsetLeft, e.pageY - offsetTop)
   
-    canvas.ontouchmove = function(e){
-      const targetX = e.touches[0].clientX - this.offsetLeft;
-      const targetY = e.touches[0].clientY - this.offsetTop;
+    canvas.onmousemove = function(e){
+      const targetX = e.pageX - offsetLeft;
+      const targetY = e.pageY - offsetTop;
   
       ctx.lineWidth = 1;
       ctx.lineTo(targetX,targetY);
       ctx.stroke();
     };
   
-    canvas.ontouchend = function(e) {
-      canvas.ontouchmove = null;
-      canvas.ontouchend = null;
+    canvas.onmouseup = function(e) {
+      canvas.onmousemove = null;
+      canvas.onmouseup = null;
     };
   };
 }

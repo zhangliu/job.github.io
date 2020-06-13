@@ -1,20 +1,16 @@
 /* 自动生成的文件，请不要修改 */
 .bgc_s_fff{background-color:#fff}
 .d_s_n{display:none}
+.p_s_r{position:relative}
+
 .p_s_a{position:absolute}
-.zi_s_100{z-index:100}
 .t_s_0{top:0px}
 .l_s_0{left:0px}
-.b_s_0{bottom:0px}
-.r_s_0{right:0px}
+.w_s_100_percent_{width:100%}
+.h_s_100_percent_{height:100%}
+.zi_s_100{z-index:100}
 .d_s_f{display:flex}
 .fd_s_c{flex-direction:column}
 .ai_s_c{align-items:center}
-.jc_s_c{justify-content:center}
-.p_s_20{padding:20px}
-.mt_s_-120{margin-top:-120px}
-.h_s_25{height:25px}
-.zi_s_101{z-index:101}
-.ctc_m_s_10_ml_s_8{margin:10px;margin-left:8px}
-.h_s_80{height:80px}
-.m_s_10{margin:10px}
+.h_s_20{height:20px}
+.ctc_m_s_10_ml_s_8_mb_s_20{margin:10px;margin-left:8px;margin-bottom:20px}

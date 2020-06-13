@@ -4,7 +4,7 @@ import Page from '../../components/page';
 export default class ClassName extends React.Component {
   render() {
     return (
-      <div>
+      <div className="h:100% w:100% d:f jc:c ai:c">
         <Page>
           <img className="w:100% mt:80" src="./imgs/5.jpeg" alt="" />
           <div className="ta:c mt:40">
