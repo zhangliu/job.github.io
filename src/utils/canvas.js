@@ -11,9 +11,9 @@ export const learnLine = (canvas, config = {}) => {
     canvas.onmousemove = function(e){
       const targetX = e.pageX - offsetLeft;
       const targetY = e.pageY - offsetTop;
-  
+
       ctx.lineWidth = 1;
-      ctx.lineTo(targetX,targetY);
+      ctx.lineTo(targetX, targetY);
       ctx.stroke();
     };
   
