@@ -1,4 +1,5 @@
 import React from 'react';
+import { getParams } from '../../utils/url';
 import { learnLine } from '../../utils/canvas';
 
 import './index.scss';
@@ -17,10 +18,9 @@ export default class ClassName extends React.Component {
     this.initPageSize();
     window.addEventListener('resize', () => this.initPageSize());
 
-    const params  = new URLSearchParams(window.location.search);
-    const pageId = params.get('page') ? `page_${params.get('page')}` : defaultPage;
+    const pageId = getParams('page') ? `page_${getParams('page')}` : defaultPage;
     this.page.id = `page_${window.$id++}`;
-    window.$(`#${pageId}`).show();
+    window.$(`#${pageId}`).fadeIn();
   }
 
   initPageSize() {
@@ -37,8 +37,12 @@ export default class ClassName extends React.Component {
     // const offset = window.$(this.page).position();
     // learnLine(canvas, { offset });
     window.$(canvas).dblclick(() => {
-      const next = window.$(this.page).next()[0] || document.getElementById(defaultPage);
-      window.$(this.page).fadeOut(300, () => window.$(next).fadeIn());
+      window.$(this.page).fadeOut(150, () => {
+        const job = getParams('job');
+        let page = +(getParams('page') || '1') + 1;
+        page = document.getElementById(`page_${page}`) ? page : '1';
+        window.location.search = `job=${job}&page=${page}`;
+      });
     });
   }
 

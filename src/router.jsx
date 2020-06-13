@@ -8,7 +8,7 @@ const jobIndex = params.get('job') || '1';
 const Job = () => {
   const Component = React.lazy(() => import(`./jobs/job${jobIndex}`));
   return (
-    <React.Suspense fallback={<div className="ta:c mt:20">加载中...</div>}>
+    <React.Suspense fallback={null}>
       <Component />
     </React.Suspense>
   )
