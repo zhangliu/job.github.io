@@ -34,8 +34,12 @@ export default class ClassName extends React.Component {
 
   initCanvas(canvas) {
     if (!canvas) return;
-    const offset = window.$(this.page).position();
-    learnLine(canvas, { offset });
+
+    canvas.width = window.$(this.page).width();
+    canvas.height = window.$(this.page).height();
+
+    learnLine(canvas);
+
     window.$(canvas).dblclick(() => {
       window.$(this.page).fadeOut(150, () => {
         const job = getParams('job');

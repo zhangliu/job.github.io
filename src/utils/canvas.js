@@ -1,8 +1,10 @@
 export const learnLine = (canvas, config = {}) => {
   const ctx = canvas.getContext('2d');
+  const rect = canvas.getBoundingClientRect();
+
   ctx.strokeStyle = config.strokeStyle || '#ff4d4f';
-  const offsetLeft = config.offset.left;
-  const offsetTop = config.offset.top;
+  const offsetLeft = rect.left;
+  const offsetTop = rect.top;
 
   canvas.onmousedown = function(e) {
     ctx.beginPath();
@@ -12,7 +14,7 @@ export const learnLine = (canvas, config = {}) => {
       const targetX = e.pageX - offsetLeft;
       const targetY = e.pageY - offsetTop;
 
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 1.2;
       ctx.lineTo(targetX, targetY);
       ctx.stroke();
     };
