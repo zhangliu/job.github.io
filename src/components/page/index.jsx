@@ -1,5 +1,6 @@
 import React from 'react';
 import { getParams } from '../../utils/url';
+import { goPage } from '../../utils/page';
 import { learnLine } from '../../utils/canvas';
 
 import './index.scss';
@@ -42,10 +43,8 @@ export default class ClassName extends React.Component {
 
     window.$(canvas).dblclick(() => {
       window.$(this.page).fadeOut(150, () => {
-        const job = getParams('job');
         let page = +(getParams('page') || '1') + 1;
-        page = document.getElementById(`page_${page}`) ? page : '1';
-        window.location.search = `job=${job}&page=${page}`;
+        goPage(`page_${page}`)
       });
     });
   }
